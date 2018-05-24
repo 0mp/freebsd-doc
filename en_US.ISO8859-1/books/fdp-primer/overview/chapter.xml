@@ -81,15 +81,12 @@
     <procedure>
       <step>
 	<para>Install the
-	  <package>textproc/docproj</package> meta-package
-	  and <application>Subversion</application>.
+	  <package>textproc/docproj</package> meta-package.
 	  This meta-package installs all of the software needed to
-	  edit and build &os; documentation.  The
-	  <application>Subversion</application> package is needed to
-	  obtain a working copy of the documentation and generate
-	  patches with.</para>
+	  edit and build &os; documentation.
+        </para>
 
-	  <screen>&prompt.root; <userinput>pkg install docproj subversion</userinput></screen>
+	  <screen>&prompt.root; <userinput>pkg install docproj</userinput></screen>
       </step>
 
       <step>
@@ -98,7 +95,7 @@
 	  <filename>~/doc</filename> (see
 	  <xref linkend="working-copy"/>).</para>
 
-	<screen>&prompt.user; <userinput>svn checkout https://svn.FreeBSD.org/doc/head <replaceable>~/doc</replaceable></userinput></screen>
+	<screen>&prompt.user; <userinput>svnlite checkout https://svn.FreeBSD.org/doc/head <replaceable>~/doc</replaceable></userinput></screen>
       </step>
 
       <step>
@@ -126,7 +123,7 @@
       <step>
 	<para>Update the local working copy:</para>
 
-	<screen>&prompt.user; <userinput>svn up <replaceable>~/doc</replaceable></userinput></screen>
+	<screen>&prompt.user; <userinput>svnlite up <replaceable>~/doc</replaceable></userinput></screen>
       </step>
 
       <step>
@@ -166,7 +163,7 @@
 	  <quote>diff file</quote>:</para>
 
 	<screen>&prompt.user; <userinput>cd ~/doc</userinput>
-&prompt.user; <userinput>svn diff &gt; <replaceable>bsdinstall</replaceable>.diff.txt</userinput></screen>
+&prompt.user; <userinput>svnlite diff &gt; <replaceable>bsdinstall</replaceable>.diff.txt</userinput></screen>
 
 	<para>Give the diff file a descriptive name.  In the example
 	  above, changes have been made to the
@@ -245,7 +242,7 @@
       <literal>https://svn.FreeBSD.org/base/</literal>.</para>
 
     <para>Documentation commit messages are visible with
-      <command>svn log</command>.  Commit messages are also
+      <command>svnlite log</command>.  Commit messages are also
       archived at <uri xlink:href="&a.svn-doc-all.url;">
 	&a.svn-doc-all.url;</uri>.</para>
 
